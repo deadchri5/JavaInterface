@@ -1,5 +1,6 @@
 package javainterface;
 
+import javafx.scene.image.Image;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,8 +12,12 @@ public class JavaInterface extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        
         Scene scene = new Scene(root);
+        
+        stage.getIcons().add( new Image(
+        JavaInterface.class.getResourceAsStream( "/resources/icon.png" ))); 
+        stage.setTitle("Hoy es Miercoles mi valedores");
+        stage.setResizable(false);
         
         stage.setScene(scene);
         stage.show();
