@@ -1,14 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javainterface.FXMLDocumentController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Liloth c:" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="658.0" prefWidth="1156.0" style="-fx-background-color: #F7F0C1;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javainterface.FXMLDocumentController">
+   <children>
+      <DatePicker layoutX="47.0" layoutY="101.0" style="-fx-border-color: black;" />
+      <DatePicker layoutX="349.0" layoutY="101.0" style="-fx-border-color: black;" />
+      <Label layoutX="47.0" layoutY="61.0" text="Fecha">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="285.0" layoutY="104.0" text="Hasta">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="608.0" layoutY="75.0" text="Porcentaje objetivo a descontar:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="608.0" layoutY="130.0" text="Importe objetivo:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField layoutX="857.0" layoutY="128.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
+      <TextField layoutX="857.0" layoutY="73.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
+      <TextField layoutX="296.0" layoutY="373.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
+      <Label layoutX="47.0" layoutY="375.0" text="Número de cuentas total:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField layoutX="296.0" layoutY="412.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
+      <Label layoutX="47.0" layoutY="414.0" text="Número de cuentas a modificar:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="452.0" layoutY="335.0" text="Importe anterior:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField layoutX="589.0" layoutY="333.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
+      <Label layoutX="452.0" layoutY="411.0" text="Diferencia:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="452.0" layoutY="372.0" text="Importe nuevo:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField layoutX="589.0" layoutY="370.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
+      <Label layoutX="789.0" layoutY="337.0" text="Efectivo anterior:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField layoutX="925.0" layoutY="335.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
+      <Label layoutX="789.0" layoutY="413.0" text="Efectivo en caja:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField layoutX="925.0" layoutY="410.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
+      <Label layoutX="789.0" layoutY="374.0" text="Efectivo nuevo:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField layoutX="925.0" layoutY="372.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
+      <TextField layoutX="551.0" layoutY="410.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
+      <Button layoutX="387.0" layoutY="498.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="191.0" style="-fx-background-color: #C7E5FC; -fx-border-color: #7B9DF5; -fx-border-width: 2; -fx-border-radius: 2em; -fx-background-radius: 2em;" text="Aplicar">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button layoutX="589.0" layoutY="498.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="191.0" style="-fx-background-radius: 2em; -fx-border-radius: 2em; -fx-background-color: #F79993; -fx-border-color: #D8605C; -fx-border-width: 2;" text="Cancelar">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <TextField layoutX="628.0" layoutY="410.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
+   </children>
 </AnchorPane>
