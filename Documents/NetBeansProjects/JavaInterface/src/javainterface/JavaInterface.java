@@ -16,7 +16,7 @@ public class JavaInterface extends Application {
         
         stage.getIcons().add( new Image(
         JavaInterface.class.getResourceAsStream( "/resources/icon.png" ))); 
-        stage.setTitle("Hoy es Miercoles mi valedores");
+        stage.setTitle("Aplicación SQL y Java");
         stage.setResizable(false);
         
         stage.setScene(scene);
