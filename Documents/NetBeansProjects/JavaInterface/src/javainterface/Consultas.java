@@ -10,23 +10,24 @@ public class Consultas{
     
     static Connection contacto = null;
     
-    public static  Connection getConexion(){
-        String url = "jdbc:sqlserver://DESKTOP-0J6KP8T\\NATIONALSOFT:1433;databaseName=softrestaurant95pro";
+    public static  Connection getConexion(String server, String user, String password) {
+        String url = "jdbc:sqlserver://"+server+":1433;databaseName=softrestaurant95pro";
+        System.out.println(url);
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         }catch (ClassNotFoundException e){
             JOptionPane.showMessageDialog(null , "no se establecion conexion" +
                     e.getMessage(),"error de conexion", JOptionPane.ERROR_MESSAGE);
         }
-        
+
         try{
-            contacto = DriverManager.getConnection(url, "sa", "National09"); 
+            contacto = DriverManager.getConnection(url, user, password); 
         }
         catch (SQLException e){
             JOptionPane.showMessageDialog(null , "Error" +
                     e.getMessage(),"error de conexion", JOptionPane.ERROR_MESSAGE);
         }
-        
+
         return contacto;
         
     }

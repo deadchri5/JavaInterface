@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="231.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javainterface.LoginController">
+   <children>
+      <Label layoutX="20.0" layoutY="100.0" text="Login:" />
+      <Label layoutX="18.0" layoutY="141.0" text="Password:" />
+      <Label layoutX="18.0" layoutY="59.0" text="Server:" />
+      <TextField fx:id="txtServer" layoutX="106.0" layoutY="54.0" />
+      <TextField fx:id="txtLogin" layoutX="106.0" layoutY="95.0" />
+      <PasswordField fx:id="txtPassword" layoutX="106.0" layoutY="136.0" />
+      <Label layoutX="81.0" layoutY="14.0" text="Conexión a SQL server" />
+      <Button onAction="#login" layoutX="120.0" layoutY="186.0" mnemonicParsing="false" text="Conectar" />
+   </children>
+</AnchorPane>
