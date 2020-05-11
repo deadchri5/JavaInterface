@@ -15,6 +15,6 @@
       <TextField fx:id="txtLogin" layoutX="106.0" layoutY="95.0" />
       <PasswordField fx:id="txtPassword" layoutX="106.0" layoutY="136.0" />
       <Label layoutX="81.0" layoutY="14.0" text="Conexión a SQL server" />
-      <Button onAction="#login" layoutX="120.0" layoutY="186.0" mnemonicParsing="false" text="Conectar" />
+      <Button fx:id="login" onAction="#loginAction" layoutX="120.0" layoutY="186.0" mnemonicParsing="false" text="Conectar" />
    </children>
 </AnchorPane>

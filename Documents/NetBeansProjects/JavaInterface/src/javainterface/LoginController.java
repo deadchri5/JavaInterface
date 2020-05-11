@@ -26,15 +26,20 @@ public class LoginController implements Initializable {
     private TextField txtLogin;
     @FXML
     private PasswordField txtPassword;
+    @FXML 
+    private javafx.scene.control.Button login;
     
     @FXML
-    private void login(ActionEvent event) throws Exception {
+    private void loginAction(ActionEvent event) throws Exception {
         String server, user, password;
         server = txtServer.getText();
         user = txtLogin.getText();
         password = txtPassword.getText();
+        Stage loginStage = (Stage) login.getScene().getWindow();
+        
         Connection con = Consultas.getConexion(server, user, password);
         if (con != null){
+            loginStage.close();
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
