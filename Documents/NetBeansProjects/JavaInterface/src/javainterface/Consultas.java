@@ -22,6 +22,7 @@ public class Consultas{
 
         try{
             contacto = DriverManager.getConnection(url, user, password); 
+            System.out.println("Conectado correctamente a la base de datos");
         }
         catch (SQLException e){
             JOptionPane.showMessageDialog(null , "Error" +

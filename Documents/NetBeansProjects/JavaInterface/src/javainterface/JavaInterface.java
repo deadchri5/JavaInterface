@@ -19,18 +19,6 @@ public class JavaInterface extends Application {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        Scene scene = new Scene(root);
-        
-        stage.getIcons().add( new Image(
-        JavaInterface.class.getResourceAsStream( "/resources/icon.png" ))); 
-        stage.setTitle("Conectate a la base de datos");
-        stage.setResizable(false);
-        
-        stage.setScene(scene);
-        stage.show();
-        */
     }
 
     /**
