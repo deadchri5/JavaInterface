@@ -1,6 +1,7 @@
 package javainterface;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -34,8 +35,21 @@ public class Consultas{
     }
     
     
-    public static void SqlConsulta() throws ClassNotFoundException, SQLException{
+    public static ResultSet Consulta(String consulta){
+       Connection cn;
+       PreparedStatement pst;
+       ResultSet rs = null;
+       try{
+           cn = contacto;
+           pst = cn.prepareStatement("SELECT folio FROM cheques");
+           rs = pst.executeQuery();
            
+           
+       }catch(Exception e){
+           JOptionPane.showMessageDialog(null , "Error" +
+                    e.getMessage(),"error de conexion", JOptionPane.ERROR_MESSAGE);
+       }
+        return rs;    
     }
 
     
