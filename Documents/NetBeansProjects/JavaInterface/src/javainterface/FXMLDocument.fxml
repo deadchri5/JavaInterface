@@ -86,7 +86,7 @@
       </Label>
       <TextField layoutX="922.0" layoutY="419.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
       <TextField layoutX="548.0" layoutY="457.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
-      <Button layoutX="387.0" layoutY="522.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="191.0" style="-fx-background-color: #C7E5FC; -fx-border-color: #7B9DF5; -fx-border-width: 2; -fx-border-radius: 2em; -fx-background-radius: 2em;" text="Aplicar">
+      <Button onAction="#aceptar" layoutX="387.0" layoutY="522.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="191.0" style="-fx-background-color: #C7E5FC; -fx-border-color: #7B9DF5; -fx-border-width: 2; -fx-border-radius: 2em; -fx-background-radius: 2em;" text="Aplicar">
          <font>
             <Font size="23.0" />
          </font>

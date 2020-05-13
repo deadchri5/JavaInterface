@@ -14,7 +14,7 @@ public class JavaInterface extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         Scene scene = new Scene(root);
         stage.getIcons().add( new Image(
-        JavaInterface.class.getResourceAsStream( "/resources/icon.png" ))); 
+        JavaInterface.class.getResourceAsStream( "/resources/icon.png" )));
         stage.setTitle("SQL Server");
         stage.setResizable(false);
         stage.setScene(scene);

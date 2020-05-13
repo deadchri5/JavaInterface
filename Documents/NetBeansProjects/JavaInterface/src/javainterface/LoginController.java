@@ -14,9 +14,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javainterface.Consultas;
-import javainterface.JavaInterface;
 import javax.swing.JOptionPane;
+
 
 public class LoginController implements Initializable {
     
@@ -31,7 +30,7 @@ public class LoginController implements Initializable {
     
     @FXML
     private void loginAction(ActionEvent event) throws Exception {
-        String server, user, password;
+        String  server, user, password;
         server = txtServer.getText();
         user = txtLogin.getText();
         password = txtPassword.getText();
@@ -45,6 +44,7 @@ public class LoginController implements Initializable {
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));
+            stage.setResizable(false);
             stage.getIcons().add( new Image(
             JavaInterface.class.getResourceAsStream( "/resources/icon.png" ))); 
             stage.setTitle("Aplicacion SQL Server y JAVA");
@@ -59,7 +59,7 @@ public class LoginController implements Initializable {
 
         @Override
         public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        this.txtServer.setText("localhost");
     }    
     
 }

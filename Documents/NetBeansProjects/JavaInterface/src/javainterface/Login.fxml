@@ -11,10 +11,10 @@
       <Label layoutX="20.0" layoutY="100.0" text="Login:" />
       <Label layoutX="18.0" layoutY="141.0" text="Password:" />
       <Label layoutX="18.0" layoutY="59.0" text="Server:" />
-      <TextField fx:id="txtServer" layoutX="106.0" layoutY="54.0" />
+      <TextField fx:id="txtServer" focusTraversable="false" layoutX="106.0" layoutY="54.0" />
       <TextField fx:id="txtLogin" layoutX="106.0" layoutY="95.0" />
       <PasswordField fx:id="txtPassword" layoutX="106.0" layoutY="136.0" />
       <Label layoutX="81.0" layoutY="14.0" text="Conexión a SQL server" />
-      <Button fx:id="login" onAction="#loginAction" layoutX="120.0" layoutY="186.0" mnemonicParsing="false" text="Conectar" />
+      <Button fx:id="login" layoutX="120.0" layoutY="186.0" mnemonicParsing="false" onAction="#loginAction" text="Conectar" />
    </children>
 </AnchorPane>
