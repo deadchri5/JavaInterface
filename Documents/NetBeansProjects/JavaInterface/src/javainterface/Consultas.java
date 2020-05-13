@@ -41,7 +41,7 @@ public class Consultas{
        ResultSet rs = null;
        try{
            cn = contacto;
-           pst = cn.prepareStatement("SELECT folio FROM cheques");
+           pst = cn.prepareStatement(consulta);
            rs = pst.executeQuery();
            
            

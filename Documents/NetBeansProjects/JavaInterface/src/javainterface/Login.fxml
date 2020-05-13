@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="231.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javainterface.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="273.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javainterface.LoginController">
    <children>
       <Label layoutX="20.0" layoutY="100.0" text="Login:" />
       <Label layoutX="18.0" layoutY="141.0" text="Password:" />
@@ -15,6 +15,7 @@
       <TextField fx:id="txtLogin" layoutX="106.0" layoutY="95.0" />
       <PasswordField fx:id="txtPassword" layoutX="106.0" layoutY="136.0" />
       <Label layoutX="81.0" layoutY="14.0" text="Conexión a SQL server" />
-      <Button fx:id="login" layoutX="120.0" layoutY="186.0" mnemonicParsing="false" onAction="#loginAction" text="Conectar" />
+      <Button fx:id="login" layoutX="120.0" layoutY="221.0" mnemonicParsing="false" onAction="#loginAction" text="Conectar" />
+      <CheckBox fx:id="cbRecuerdame" layoutX="18.0" layoutY="183.0" mnemonicParsing="false" text="Recuerda mis datos" />
    </children>
 </AnchorPane>
