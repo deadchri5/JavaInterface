@@ -10,14 +10,20 @@ import javafx.scene.control.Label;
 import javainterface.Consultas;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javax.swing.JOptionPane;
 
 public class FXMLDocumentController implements Initializable {
     
-    ArrayList<Integer> ListaFolios = new ArrayList<>();
+    ObservableList list = FXCollections.observableArrayList();
     
     @FXML
     private Label label;
+    @FXML
+    private ListView <String> listaCheques; 
     
     @FXML
     private void aceptar(ActionEvent event) {
@@ -31,14 +37,16 @@ public class FXMLDocumentController implements Initializable {
     }    
     
     public void obtenerCheques(){
-    ResultSet folios;
+        list.removeAll(list);
+        listaCheques.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        ResultSet folios;
         try{
         folios = Consultas.Consulta("SELECT folio FROM cheques");
         while (folios.next()){
             int folio = folios.getInt(1);
-            ListaFolios.add(folio);
+            list.add("Folio #" + folio);
+            listaCheques.getItems().addAll(list);
         }
-            System.out.println(ListaFolios);
         }
         catch(SQLException e){
             JOptionPane.showMessageDialog(null , "Ocurrio un error al obtener folios" +
