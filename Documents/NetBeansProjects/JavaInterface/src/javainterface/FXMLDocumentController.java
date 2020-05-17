@@ -41,6 +41,7 @@ public class FXMLDocumentController implements Initializable {
 
     public void obtenerCheques() {
         list.removeAll(list);
+        listaCheques.getItems().clear();
         if (fechaInicio.getValue() == null || fechaFin.getValue() == null) {
             JOptionPane.showMessageDialog(null, "Ambos campos de fecha deben de estar llenos");
         } else {
@@ -54,7 +55,6 @@ public class FXMLDocumentController implements Initializable {
                     list.add(folio);
                 }
                     listaCheques.getItems().addAll(list);
-                    System.out.println(listaCheques.getItems());
                 if (list.size() == 0){
                     JOptionPane.showMessageDialog(null, "No se encontraron folios entre las fechas " + fechaInicio.getValue() + 
                             " y " + fechaFin.getValue());
