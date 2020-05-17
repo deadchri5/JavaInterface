@@ -46,7 +46,8 @@ public class FXMLDocumentController implements Initializable {
             JOptionPane.showMessageDialog(null, "Ambos campos de fecha deben de estar llenos");
         } else {
             String query = "SELECT folio FROM cheques where fecha >= '"
-                    + fechaInicio.getValue() + " 00:00:00' AND cierre <= '" + fechaFin.getValue() + " 23:59:00'";
+                    + fechaInicio.getValue() + " 00:00:00' AND cierre <= '" + fechaFin.getValue() + " 23:59:00'"+
+                    "AND tarjeta<1";
             ResultSet folios;
             try {
                 folios = Consultas.Consulta(query);
