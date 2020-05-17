@@ -51,10 +51,10 @@ public class FXMLDocumentController implements Initializable {
                 folios = Consultas.Consulta(query);
                 while (folios.next()) {
                     int folio = folios.getInt(1);
-                    System.out.println(folio);
                     list.add(folio);
-                    listaCheques.getItems().addAll(list);
                 }
+                    listaCheques.getItems().addAll(list);
+                    System.out.println(listaCheques.getItems());
                 if (list.size() == 0){
                     JOptionPane.showMessageDialog(null, "No se encontraron folios entre las fechas " + fechaInicio.getValue() + 
                             " y " + fechaFin.getValue());
