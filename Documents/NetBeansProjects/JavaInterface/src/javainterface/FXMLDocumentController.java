@@ -66,5 +66,23 @@ public class FXMLDocumentController implements Initializable {
             }
         }
     }
+    
+    public class Folios{
+        private String folio;
+        
+        public String getFolio(){
+            return folio;
+        }
+        
+        public void setFolio(String f){
+            folio = f;
+        }
+   }
+    
+    Folios fn = new Folios();
+    
+    public void borrarFolio(Folios fn){
+        
+    }
 
 }
