@@ -1,5 +1,6 @@
 package javainterface;
 
+import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -19,6 +20,7 @@ import javax.swing.JOptionPane;
 public class FXMLDocumentController implements Initializable {
 
     ObservableList list = FXCollections.observableArrayList();
+    Consultas con = new Consultas();
 
     @FXML
     private Label label;
@@ -29,7 +31,21 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void aceptar(ActionEvent event) {
-        System.out.println("You clicked me!");
+        ObservableList<Integer> listaSeleccion = listaCheques.getSelectionModel().getSelectedItems();
+        for (int i = 0; i < listaSeleccion.size(); i++) {
+            System.out.println(listaSeleccion.get(i));
+            ResultSet rs;
+            try {
+                rs = Consultas.Consulta("Select mesa FROM cheques WHERE folio =" + listaSeleccion.get(i));
+                while (rs.next()) {
+                    String mesa = rs.getString(1);
+                    System.out.println("Mesa: " + mesa);
+                }
+            } catch (SQLException e) {
+                        JOptionPane.showMessageDialog(null, "Problema al obtener las mesas"
+                        + e.getMessage(), "Error de consulta", JOptionPane.ERROR_MESSAGE);
+            }
+        }
     }
 
     @Override
@@ -46,8 +62,8 @@ public class FXMLDocumentController implements Initializable {
             JOptionPane.showMessageDialog(null, "Ambos campos de fecha deben de estar llenos");
         } else {
             String query = "SELECT folio FROM cheques where fecha >= '"
-                    + fechaInicio.getValue() + " 00:00:00' AND cierre <= '" + fechaFin.getValue() + " 23:59:00'"+
-                    "AND tarjeta<1";
+                    + fechaInicio.getValue() + " 00:00:00' AND cierre <= '" + fechaFin.getValue() + " 23:59:00'"
+                    + "AND tarjeta<1";
             ResultSet folios;
             try {
                 folios = Consultas.Consulta(query);
@@ -55,10 +71,10 @@ public class FXMLDocumentController implements Initializable {
                     int folio = folios.getInt(1);
                     list.add(folio);
                 }
-                    listaCheques.getItems().addAll(list);
-                if (list.size() == 0){
-                    JOptionPane.showMessageDialog(null, "No se encontraron folios entre las fechas " + fechaInicio.getValue() + 
-                            " y " + fechaFin.getValue());
+                listaCheques.getItems().addAll(list);
+                if (list.size() == 0) {
+                    JOptionPane.showMessageDialog(null, "No se encontraron folios entre las fechas " + fechaInicio.getValue()
+                            + " y " + fechaFin.getValue());
                 }
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(null, "Ocurrio un error al obtener folios"
@@ -66,23 +82,24 @@ public class FXMLDocumentController implements Initializable {
             }
         }
     }
-    
-    public class Folios{
+
+    public class Folios {
+
         private String folio;
-        
-        public String getFolio(){
+
+        public String getFolio() {
             return folio;
         }
-        
-        public void setFolio(String f){
+
+        public void setFolio(String f) {
             folio = f;
         }
-   }
-    
+    }
+
     Folios fn = new Folios();
-    
-    public void borrarFolio(Folios fn){
-        
+
+    public void borrarFolio(Folios fn) {
+
     }
 
 }
