@@ -33,16 +33,16 @@ public class FXMLDocumentController implements Initializable {
     private void aceptar(ActionEvent event) {
         ObservableList<Integer> listaSeleccion = listaCheques.getSelectionModel().getSelectedItems();
         for (int i = 0; i < listaSeleccion.size(); i++) {
-            System.out.println(listaSeleccion.get(i));
-            ResultSet rs;
+            
             try {
-                rs = Consultas.Consulta("Select mesa FROM cheques WHERE folio =" + listaSeleccion.get(i));
+                String eliminar = ("DELETE FROM cheques WHERE folio ="+listaSeleccion.get(i));
+                ResultSet rs;
+                rs = Consultas.Consulta(eliminar);
                 while (rs.next()) {
-                    String mesa = rs.getString(1);
-                    System.out.println("Mesa: " + mesa);
+                    System.out.println("folio: " + listaSeleccion.get(i));
                 }
             } catch (SQLException e) {
-                        JOptionPane.showMessageDialog(null, "Problema al obtener las mesas"
+                        JOptionPane.showMessageDialog(null, "Problema"
                         + e.getMessage(), "Error de consulta", JOptionPane.ERROR_MESSAGE);
             }
         }
@@ -83,23 +83,6 @@ public class FXMLDocumentController implements Initializable {
         }
     }
 
-    public class Folios {
-
-        private String folio;
-
-        public String getFolio() {
-            return folio;
-        }
-
-        public void setFolio(String f) {
-            folio = f;
-        }
-    }
-
-    Folios fn = new Folios();
-
-    public void borrarFolio(Folios fn) {
-
-    }
+   
 
 }
