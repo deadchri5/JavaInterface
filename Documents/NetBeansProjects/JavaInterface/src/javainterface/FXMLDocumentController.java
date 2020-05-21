@@ -33,19 +33,10 @@ public class FXMLDocumentController implements Initializable {
     private void aceptar(ActionEvent event) {
         ObservableList<Integer> listaSeleccion = listaCheques.getSelectionModel().getSelectedItems();
         for (int i = 0; i < listaSeleccion.size(); i++) {
-            
-            try {
                 String eliminar = ("DELETE FROM cheques WHERE folio ="+listaSeleccion.get(i));
-                ResultSet rs;
-                rs = Consultas.Consulta(eliminar);
-                while (rs.next()) {
-                    System.out.println("folio: " + listaSeleccion.get(i));
-                }
-            } catch (SQLException e) {
-                        JOptionPane.showMessageDialog(null, "Problema"
-                        + e.getMessage(), "Error de consulta", JOptionPane.ERROR_MESSAGE);
-            }
+                Consultas.DeleteFolio(eliminar);
         }
+        obtenerCheques();
     }
 
     @Override

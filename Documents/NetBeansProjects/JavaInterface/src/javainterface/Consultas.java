@@ -43,13 +43,28 @@ public class Consultas{
            cn = contacto;
            pst = cn.prepareStatement(consulta);
            rs = pst.executeQuery();
-           
-           
        }catch(Exception e){
            JOptionPane.showMessageDialog(null , "Error" +
                     e.getMessage(),"error de conexion", JOptionPane.ERROR_MESSAGE);
        }
-        return rs;    
+        return rs;      
+    }
+    
+    public static void DeleteFolio(String consulta){
+        Connection con = contacto;
+        PreparedStatement pst;
+        ResultSet rs;
+        try{
+            pst = con.prepareStatement(consulta);
+            boolean query = pst.execute();
+            if (query){
+                System.out.println("Folio eliminado");
+            }
+        }
+        catch(Exception e){
+        JOptionPane.showMessageDialog(null , "Error" +
+                    e.getMessage(),"error de conexion", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     

@@ -72,19 +72,19 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <TextField layoutX="922.0" layoutY="382.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
+      <TextField fx:id="txtEfectivoAnterior" layoutX="922.0" layoutY="382.0" prefHeight="33.0" prefWidth="114.0" style="-fx-border-color: black;" />
       <Label layoutX="786.0" layoutY="460.0" text="Efectivo en caja:">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <TextField layoutX="922.0" layoutY="457.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
+      <TextField layoutX="922.0" layoutY="457.0" prefHeight="33.0" prefWidth="114.0" style="-fx-border-color: black;" />
       <Label layoutX="786.0" layoutY="421.0" text="Efectivo nuevo:">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <TextField layoutX="922.0" layoutY="419.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
+      <TextField layoutX="922.0" layoutY="419.0" prefHeight="33.0" prefWidth="115.0" style="-fx-border-color: black;" />
       <TextField layoutX="548.0" layoutY="457.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
       <Button layoutX="387.0" layoutY="522.0" mnemonicParsing="false" onAction="#aceptar" prefHeight="104.0" prefWidth="191.0" style="-fx-background-color: #C7E5FC; -fx-border-color: #7B9DF5; -fx-border-width: 2; -fx-border-radius: 2em; -fx-background-radius: 2em;" text="Aplicar">
          <font>
