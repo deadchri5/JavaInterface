@@ -26,103 +26,48 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="739.0" layoutY="56.0" text="Porcentaje objetivo a descontar:">
+      <Label layoutX="95.0" layoutY="509.0" text="Total:">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="739.0" layoutY="111.0" text="Importe objetivo:">
+      <Label layoutX="95.0" layoutY="574.0" text="Cantidad seleccionada:">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <TextField layoutX="988.0" layoutY="109.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
-      <TextField layoutX="988.0" layoutY="54.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
-      <TextField layoutX="293.0" layoutY="420.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
-      <Label layoutX="44.0" layoutY="422.0" text="Número de cuentas total:">
+      <TextField fx:id="totalSelect" editable="false" layoutX="306.0" layoutY="571.0" prefHeight="33.0" prefWidth="128.0" style="-fx-border-color: black;" />
+      <TextField fx:id="sub" editable="false" layoutX="306.0" layoutY="506.0" onMouseClicked="#obtenerTotalCheques" prefHeight="33.0" prefWidth="128.0" style="-fx-border-color: black;" />
+      <Button layoutX="896.0" layoutY="557.0" mnemonicParsing="false" onAction="#aceptar" prefHeight="47.0" prefWidth="128.0" style="-fx-background-color: #C7E5FC; -fx-border-color: #7B9DF5; -fx-border-width: 2; -fx-border-radius: 2em; -fx-background-radius: 2em;" text="Aplicar">
          <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <TextField layoutX="293.0" layoutY="459.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
-      <Label layoutX="44.0" layoutY="461.0" text="Número de cuentas a modificar:">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <Label layoutX="449.0" layoutY="382.0" text="Importe anterior:">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <TextField layoutX="586.0" layoutY="380.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
-      <Label layoutX="449.0" layoutY="458.0" text="Diferencia:">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <Label layoutX="449.0" layoutY="419.0" text="Importe nuevo:">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <TextField layoutX="586.0" layoutY="417.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
-      <Label layoutX="786.0" layoutY="384.0" text="Efectivo anterior:">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtEfectivoAnterior" layoutX="922.0" layoutY="382.0" prefHeight="33.0" prefWidth="114.0" style="-fx-border-color: black;" />
-      <Label layoutX="786.0" layoutY="460.0" text="Efectivo en caja:">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <TextField layoutX="922.0" layoutY="457.0" prefHeight="33.0" prefWidth="114.0" style="-fx-border-color: black;" />
-      <Label layoutX="786.0" layoutY="421.0" text="Efectivo nuevo:">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <TextField layoutX="922.0" layoutY="419.0" prefHeight="33.0" prefWidth="115.0" style="-fx-border-color: black;" />
-      <TextField layoutX="548.0" layoutY="457.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
-      <Button layoutX="387.0" layoutY="522.0" mnemonicParsing="false" onAction="#aceptar" prefHeight="104.0" prefWidth="191.0" style="-fx-background-color: #C7E5FC; -fx-border-color: #7B9DF5; -fx-border-width: 2; -fx-border-radius: 2em; -fx-background-radius: 2em;" text="Aplicar">
-         <font>
-            <Font size="23.0" />
+            <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="589.0" layoutY="522.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="191.0" style="-fx-background-radius: 2em; -fx-border-radius: 2em; -fx-background-color: #F79993; -fx-border-color: #D8605C; -fx-border-width: 2;" text="Cancelar">
-         <font>
-            <Font size="23.0" />
-         </font>
-      </Button>
-      <TextField layoutX="625.0" layoutY="457.0" prefHeight="31.0" prefWidth="74.0" style="-fx-border-color: black;" />
       <Label layoutX="44.0" layoutY="169.0" prefHeight="36.0" prefWidth="1041.0" style="-fx-background-color: white; -fx-border-color: black;" text="Folio">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="844.0" layoutY="169.0" prefHeight="36.0" prefWidth="241.0" style="-fx-background-color: white; -fx-border-color: black;">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <CheckBox layoutX="951.0" layoutY="177.0" mnemonicParsing="false" />
-      <ImageView fitHeight="54.0" fitWidth="43.0" layoutX="598.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true"> 
-          <image>
-              <Image url="resources/Tache.png" />
-          </image>
-      </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="53.0" layoutX="398.0" layoutY="546.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="33.0" fitWidth="20.0" layoutX="910.0" layoutY="570.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="resources/Paloma.png" />
          </image>
       </ImageView>
-      <VBox layoutX="44.0" layoutY="204.0" prefHeight="165.0" prefWidth="1041.0">
+      <VBox layoutX="44.0" layoutY="204.0" prefHeight="273.0" prefWidth="1041.0">
          <children>
-            <ListView fx:id="listaCheques" prefHeight="165.0" prefWidth="802.0" />
+            <ListView fx:id="listaCheques" depthTest="ENABLE" onKeyReleased="#SelectTotal" onMouseClicked="#SelectTotal" prefHeight="273.0" prefWidth="1041.0" />
          </children>
       </VBox>
-      <Button fx:id="btnFecha" layoutX="576.0" layoutY="83.0" mnemonicParsing="false" onAction="#obtenerCheques" text="Consultar" />
+      <Button fx:id="btnFecha" layoutX="578.0" layoutY="75.0" mnemonicParsing="false" onAction="#obtenerCheques" onMouseClicked="#obtenerTotalCheques" prefHeight="47.0" prefWidth="128.0" style="-fx-background-color: #D5F5B7; -fx-border-color: #93DA4E; -fx-border-width: 2; -fx-border-radius: 2em; -fx-background-radius: 2em;" text="Consultar">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Text layoutX="781.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teclas para seleccionar/deseleccionar" textAlignment="CENTER" wrappingWidth="277.6708984375">
+         <effect>
+            <Blend />
+         </effect>
+      </Text>
+      <Text layoutX="787.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ctrl: click en click" wrappingWidth="128.0" />
+      <Text layoutX="787.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shift+tecla abajo/arriba: manera continua" wrappingWidth="285.5849609375" />
    </children>
 </AnchorPane>
