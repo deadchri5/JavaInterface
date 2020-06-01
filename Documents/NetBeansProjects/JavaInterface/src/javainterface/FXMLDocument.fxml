@@ -38,7 +38,7 @@
       </Label>
       <TextField fx:id="totalSelect" editable="false" layoutX="306.0" layoutY="571.0" prefHeight="33.0" prefWidth="128.0" style="-fx-border-color: black;" />
       <TextField fx:id="sub" editable="false" layoutX="306.0" layoutY="506.0" onMouseClicked="#obtenerTotalCheques" prefHeight="33.0" prefWidth="128.0" style="-fx-border-color: black;" />
-      <Button layoutX="896.0" layoutY="557.0" mnemonicParsing="false" onAction="#aceptar" prefHeight="47.0" prefWidth="128.0" style="-fx-background-color: #C7E5FC; -fx-border-color: #7B9DF5; -fx-border-width: 2; -fx-border-radius: 2em; -fx-background-radius: 2em;" text="Aplicar">
+      <Button layoutX="896.0" layoutY="557.0" mnemonicParsing="false" onAction="#aceptar" prefHeight="47.0" prefWidth="129.0" style="-fx-background-color: #C7E5FC; -fx-border-color: #7B9DF5; -fx-border-width: 2; -fx-border-radius: 2em; -fx-background-radius: 2em;" text="Aplicar">
          <font>
             <Font size="18.0" />
          </font>
@@ -58,7 +58,7 @@
             <ListView fx:id="listaCheques" depthTest="ENABLE" onKeyPressed="#SelectTotal" onKeyReleased="#SelectTotal" onMouseClicked="#SelectTotal" prefHeight="273.0" prefWidth="1041.0" style="-fx-border-color: black;" />
          </children>
       </VBox>
-      <Button fx:id="btnFecha" layoutX="578.0" layoutY="75.0" mnemonicParsing="false" onAction="#obtenerCheques" onMouseClicked="#obtenerTotalCheques" prefHeight="47.0" prefWidth="128.0" style="-fx-background-color: #D5F5B7; -fx-border-color: #93DA4E; -fx-border-width: 2; -fx-border-radius: 2em; -fx-background-radius: 2em;" text="Consultar">
+      <Button fx:id="btnFecha" layoutX="578.0" layoutY="75.0" mnemonicParsing="false" onAction="#obtenerCheques" onMouseClicked="#obtenerTotalCheques" prefHeight="47.0" prefWidth="129.0" style="-fx-background-color: #D5F5B7; -fx-border-color: #93DA4E; -fx-border-width: 2; -fx-border-radius: 2em; -fx-background-radius: 2em;" text="Consultar">
          <font>
             <Font size="18.0" />
          </font></Button>
