@@ -12,7 +12,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="658.0" prefWidth="1156.0" style="-fx-background-color: #F7F0C1;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javainterface.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="658.0" prefWidth="1156.0" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javainterface.FXMLDocumentController">
    <children>
       <DatePicker fx:id="fechaInicio" layoutX="31.0" layoutY="82.0" style="-fx-border-color: black;" />
       <DatePicker fx:id="fechaFin" layoutX="333.0" layoutY="82.0" style="-fx-border-color: black;" />
@@ -55,7 +55,7 @@
       </ImageView>
       <VBox layoutX="44.0" layoutY="204.0" prefHeight="273.0" prefWidth="1041.0">
          <children>
-            <ListView fx:id="listaCheques" depthTest="ENABLE" onKeyPressed="#SelectTotal" onKeyReleased="#SelectTotal" onMouseClicked="#SelectTotal" prefHeight="273.0" prefWidth="1041.0" />
+            <ListView fx:id="listaCheques" depthTest="ENABLE" onKeyPressed="#SelectTotal" onKeyReleased="#SelectTotal" onMouseClicked="#SelectTotal" prefHeight="273.0" prefWidth="1041.0" style="-fx-border-color: black;" />
          </children>
       </VBox>
       <Button fx:id="btnFecha" layoutX="578.0" layoutY="75.0" mnemonicParsing="false" onAction="#obtenerCheques" onMouseClicked="#obtenerTotalCheques" prefHeight="47.0" prefWidth="128.0" style="-fx-background-color: #D5F5B7; -fx-border-color: #93DA4E; -fx-border-width: 2; -fx-border-radius: 2em; -fx-background-radius: 2em;" text="Consultar">
