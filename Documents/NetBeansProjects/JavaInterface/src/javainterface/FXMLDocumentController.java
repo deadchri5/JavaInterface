@@ -34,8 +34,6 @@ public class FXMLDocumentController implements Initializable {
     private DatePicker fechaInicio, fechaFin;
     @FXML
     private ListView<Integer> listaCheques;
-    @FXML
-    private ListView<Integer> listatotal;
 
  
     @FXML
@@ -63,7 +61,6 @@ public class FXMLDocumentController implements Initializable {
         sub.clear();
         totalSelect.clear();
         listaCheques.getItems().clear();
-        listatotal.getItems().clear();
         if (fechaInicio.getValue() == null || fechaFin.getValue() == null) {
             JOptionPane.showMessageDialog(null, "Ambos campos de fecha deben de estar llenos");
         } else {
@@ -76,11 +73,9 @@ public class FXMLDocumentController implements Initializable {
                 while (folios.next()) {
                     int folio = folios.getInt(1);
                     int total = folios.getInt(2);
-                    list.add(folio );
-                    list1.add("$"+total);
+                    list.add(folio+"                                                        $"+total );
                 }
                 listaCheques.getItems().addAll(list);
-                listatotal.getItems().addAll(list1);
                 
                 if (list.size() == 0) {
                     JOptionPane.showMessageDialog(null, "No se encontraron folios entre las fechas " + fechaInicio.getValue()
