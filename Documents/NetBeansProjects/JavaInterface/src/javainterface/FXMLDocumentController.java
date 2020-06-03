@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
 public class FXMLDocumentController implements Initializable {
 
     ObservableList list = FXCollections.observableArrayList();
+    ObservableList list1 = FXCollections.observableArrayList();
     Consultas con = new Consultas();
 
     @FXML
@@ -33,6 +34,9 @@ public class FXMLDocumentController implements Initializable {
     private DatePicker fechaInicio, fechaFin;
     @FXML
     private ListView<Integer> listaCheques;
+    @FXML
+    private ListView<Integer> listatotal;
+
  
     @FXML
     private void aceptar(ActionEvent event) {
@@ -55,13 +59,15 @@ public class FXMLDocumentController implements Initializable {
 
     public void obtenerCheques() {
         list.removeAll(list);
+        list1.removeAll(list1);
         sub.clear();
         totalSelect.clear();
         listaCheques.getItems().clear();
+        listatotal.getItems().clear();
         if (fechaInicio.getValue() == null || fechaFin.getValue() == null) {
             JOptionPane.showMessageDialog(null, "Ambos campos de fecha deben de estar llenos");
         } else {
-            String query = "SELECT folio FROM cheques where fecha >= '"
+            String query = "SELECT folio, total  FROM cheques where fecha >= '"
                     + fechaInicio.getValue() + " 00:00:00' AND cierre <= '" + fechaFin.getValue() + " 23:59:00'"
                     + "AND tarjeta<1";
             ResultSet folios;
@@ -69,9 +75,12 @@ public class FXMLDocumentController implements Initializable {
                 folios = Consultas.Consulta(query);
                 while (folios.next()) {
                     int folio = folios.getInt(1);
-                    list.add(folio);
+                    int total = folios.getInt(2);
+                    list.add(folio );
+                    list1.add("$"+total);
                 }
                 listaCheques.getItems().addAll(list);
+                listatotal.getItems().addAll(list1);
                 
                 if (list.size() == 0) {
                     JOptionPane.showMessageDialog(null, "No se encontraron folios entre las fechas " + fechaInicio.getValue()
