@@ -33,12 +33,12 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private DatePicker fechaInicio, fechaFin;
     @FXML
-    private ListView<Integer> listaCheques;
+    private ListView<String> listaCheques;
 
  
     @FXML
     private void aceptar(ActionEvent event) {
-        ObservableList<Integer> listaSeleccion = listaCheques.getSelectionModel().getSelectedItems();
+        ObservableList<String> listaSeleccion = listaCheques.getSelectionModel().getSelectedItems();
         for (int i = 0; i < listaSeleccion.size(); i++) {
                 String eliminar = ("DELETE FROM cheques WHERE folio ="+listaSeleccion.get(i));
                 Consultas.DeleteFolio(eliminar);
@@ -72,7 +72,7 @@ public class FXMLDocumentController implements Initializable {
                 folios = Consultas.Consulta(query);
                 while (folios.next()) {
                     int folio = folios.getInt(1);
-                    int total = folios.getInt(2);
+                    float total = folios.getFloat(2);
                     list.add(folio+"                                                        $"+total );
                 }
                 listaCheques.getItems().addAll(list);
@@ -120,9 +120,11 @@ public class FXMLDocumentController implements Initializable {
     public void SelectTotal (){
         list.removeAll(list);
         String subtotal;
-          ObservableList<Integer> listaSeleccion = listaCheques.getSelectionModel().getSelectedItems();    
+          ObservableList<String> listaSeleccion = listaCheques.getSelectionModel().getSelectedItems();    
              for (int i = 0; i < listaSeleccion.size(); i++) {
-                subtotal = ("SELECT total FROM cheques WHERE folio ="+listaSeleccion.get(i));
+                 String query = listaSeleccion.get(i);
+                 String [] parts = query.split("\\$");
+                subtotal = ("SELECT total FROM cheques WHERE folio ="+parts[0]);
                 ResultSet total;
                 try {
                 total = Consultas.Consulta(subtotal);
