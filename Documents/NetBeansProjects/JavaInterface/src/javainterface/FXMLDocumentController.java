@@ -40,7 +40,9 @@ public class FXMLDocumentController implements Initializable {
     private void aceptar(ActionEvent event) {
         ObservableList<String> listaSeleccion = listaCheques.getSelectionModel().getSelectedItems();
         for (int i = 0; i < listaSeleccion.size(); i++) {
-                String eliminar = ("DELETE FROM cheques WHERE folio ="+listaSeleccion.get(i));
+                String query = listaSeleccion.get(i);
+                String [] parts = query.split("\\$");
+                String eliminar = ("DELETE FROM cheques WHERE folio ="+parts[0]);
                 Consultas.DeleteFolio(eliminar);
         }
         obtenerCheques();
@@ -64,9 +66,10 @@ public class FXMLDocumentController implements Initializable {
         if (fechaInicio.getValue() == null || fechaFin.getValue() == null) {
             JOptionPane.showMessageDialog(null, "Ambos campos de fecha deben de estar llenos");
         } else {
-            String query = "SELECT folio, total  FROM cheques where fecha >= '"
-                    + fechaInicio.getValue() + " 00:00:00' AND cierre <= '" + fechaFin.getValue() + " 23:59:00'"
+            String query = "SELECT numcheque, total  FROM cheques where fecha >= '"
+                    + fechaInicio.getValue() + "T00:00:00' AND cierre <= '" + fechaFin.getValue() + "T23:59:00'"
                     + "AND tarjeta<1";
+            System.out.println(query);
             ResultSet folios;
             try {
                 folios = Consultas.Consulta(query);
