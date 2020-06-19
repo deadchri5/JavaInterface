@@ -42,7 +42,7 @@ public class FXMLDocumentController implements Initializable {
         for (int i = 0; i < listaSeleccion.size(); i++) {
                 String query = listaSeleccion.get(i);
                 String [] parts = query.split("\\$");
-                String eliminar = ("DELETE FROM cheques WHERE folio ="+parts[0]);
+                String eliminar = ("DELETE FROM cheques WHERE numcheque ="+parts[0]);
                 Consultas.DeleteFolio(eliminar);
         }
         obtenerCheques();
@@ -127,7 +127,7 @@ public class FXMLDocumentController implements Initializable {
              for (int i = 0; i < listaSeleccion.size(); i++) {
                  String query = listaSeleccion.get(i);
                  String [] parts = query.split("\\$");
-                subtotal = ("SELECT total FROM cheques WHERE folio ="+parts[0]);
+                subtotal = ("SELECT total FROM cheques WHERE numcheque ="+parts[0]);
                 ResultSet total;
                 try {
                 total = Consultas.Consulta(subtotal);
